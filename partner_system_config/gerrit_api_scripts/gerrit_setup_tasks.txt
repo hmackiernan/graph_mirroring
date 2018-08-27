@@ -1,0 +1,38 @@
+Tasks to automate for setting up a minimal gerrit istance (for mirroring testing)
+Some can use the Gerrit ssh interface, a few require the REST API
+
+#create users
+Gerrit SSH Comand: gerrit create-account
+Script: gerrit_create_users.pl
+#TODO: needs ssh keys and multiple email addresses for users; where/how to read .ssh keys, from file or in perl data block?
+
+#create group
+Gerrit SSH command: gerrit create-group
+Script: create_gerrit_group.pl
+
+#add users to group
+Gerrit SSH Command: gerrit set-members
+Script: add_gerrit_users_to_group.pl
+
+
+#create project
+Gerrit SSH Command: gerrit create-project
+Script: TODO
+# Should unset 'Require Change-Id in commit message'
+
+# lookup group GUID
+Gerrit REST command a/groups/<group-name>
+Script: gerrit_get_group_id.pl
+
+
+
+#set permissions on project for group
+Script: TODO: will require web api, apparently
+#TODO: need to lookup group GUID from group name
+#TODO: default permissions enum
+# refs/heads/* requires Create Reference, Delete Reference, Push, Label Code-Review
+# Optional: Submit (for direct submit)
+label-Code-Review, createTag, submit, create, delete
+
+
+# refs/tags/* requires create, delete, createTag

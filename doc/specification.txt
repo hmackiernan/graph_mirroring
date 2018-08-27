@@ -1,0 +1,24 @@
+REST API for various partner systems for creating users, projects and associating users to projects
+
+
+=GitLab=
+
+* Create User
+
+* Create project
+
+* Add user to project
+
+=Gerrit=
+
+* Create Account
+username, name, ssh_key, http_password, groups
+
+* Create Project
+project_name, submit_type, owners, description
+
+* Create Group
+
+* Add user to Group
+
+* Set access to project for group
